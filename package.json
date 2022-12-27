@@ -1,0 +1,32 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "NODE_ENV=testing nyc --reporter=text mocha --recursive --exit --timeout 10000"
+  },
+  "dependencies": {
+    "chai": "^4.3.7",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "express": "~4.17.0",
+    "express-openid-connect": "github:auth0/express-openid-connect",
+    "express-session": "^1.17.3",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "joi": "^17.7.0",
+    "mocha": "^10.2.0",
+    "mongoose": "^6.8.1",
+    "morgan": "~1.9.1",
+    "passport": "^0.6.0",
+    "passport-auth0": "^1.4.3",
+    "pug": "^3.0.2",
+    "supertest": "^6.3.3"
+  },
+  "devDependencies": {
+    "nyc": "^15.1.0"
+  }
+}

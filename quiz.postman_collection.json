@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "a6c89691-ad0b-4cd4-970f-ffac9fe788a0",
+		"name": "quiz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9439070"
+	},
+	"item": [
+		{
+			"name": "add question to quiz",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question\": \"which of this is a fruit? \",\n    \"options\": [\n        {\n            \"option\":\"apple\"\n        },\n        {\n            \"option\":\"tomatp\"\n        },\n        {\n            \"option\":\"guava\"\n        }\n    ],\n    \"answer\": [0,1]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/quizes/63a964d6004786f79230490b/questions",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"quizes",
+						"63a964d6004786f79230490b",
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update question in quiz",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question\": \"which of this is a fruit? \",\n    \"options\": [\n        {\n            \"option\":\"apple\"\n        },\n        {\n            \"option\":\"tomatp\"\n        },\n        {\n            \"option\":\"guava\"\n        }\n    ],\n    \"answer\": [0,1]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/quizes/63a964d6004786f79230490b/questions/63aac10305098a6c81f9f794",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"quizes",
+						"63a964d6004786f79230490b",
+						"questions",
+						"63aac10305098a6c81f9f794"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get question details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question\": \"which of this is a fruit???? \"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/quizes/63a964d6004786f79230490b/questions/63aac10305098a6c81f9f794",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"quizes",
+						"63a964d6004786f79230490b",
+						"questions",
+						"63aac10305098a6c81f9f794"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "shar the quiz",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n    {\n        \"email\": [\"amit.rebellion183@gmail.com\", \"a@g.com\"]\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/quizes/63a964d6004786f79230490b/share",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"quizes",
+						"63a964d6004786f79230490b",
+						"share"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create quiz",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"gk\",\n    \"instructions\": \"first\",\n    \"isEnabled\": true,\n    \"questions\": [\n        {\n            \"question\": \"select random\",\n            \"options\": [\n                {\n                    \"option\": \"random\"\n                },\n                {\n                    \"option\": \"not random\"\n                }\n            ],\n            \"answer\": [0],\n            \"isEnabled\": true\n        },\n        {\n            \"question\": \"select fruits\",\n            \"options\": [\n                {\n                    \"option\": \"tomatp\"\n                },\n                {\n                    \"option\": \"apple\"\n                },\n                {\n                    \"option\": \"mango\"\n                }\n            ],\n            \"answer\": [0,1],\n            \"isEnabled\": true\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/quizes",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"quizes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add answer to quiz for user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"questionAnswered\" : [\n        {\n            \"questionId\": \"63a96520004786f792304918\",\n            \"optionSelected\": [1]\n        },\n        {\n            \"questionId\":\"63a97c244d5bca6b7aa9a30a\",\n            \"optionSelected\": [0,1]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/answer/63aa8d5cc737ada9c6f9a8b0/quiz/63a964d6004786f79230490b",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"answer",
+						"63aa8d5cc737ada9c6f9a8b0",
+						"quiz",
+						"63a964d6004786f79230490b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get quiz by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"gk\",\n    \"instructions\": \"first\",\n    \"isEnabled\": true,\n    \"questions\": [\n        {\n            \"question\": \"select random\",\n            \"options\": [\n                {\n                    \"option\": \"random\"\n                },\n                {\n                    \"option\": \"not random\"\n                }\n            ],\n            \"answer\": [0],\n            \"isEnabled\": true\n        },\n        {\n            \"question\": \"select fruits\",\n            \"options\": [\n                {\n                    \"option\": \"tomatp\"\n                },\n                {\n                    \"option\": \"apple\"\n                },\n                {\n                    \"option\": \"mango\"\n                }\n            ],\n            \"answer\": [0,1],\n            \"isEnabled\": true\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/quizes/63aad006393ce42c461cc3b3",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"quizes",
+						"63aad006393ce42c461cc3b3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
